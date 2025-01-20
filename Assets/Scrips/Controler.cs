@@ -8,6 +8,7 @@ public class Controler : MonoBehaviour
 
     [SerializeField] List<string> scenes;
     string nextScene;
+    int index;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,11 @@ public class Controler : MonoBehaviour
             {
                 if (Scene == target)
                 {
-                    nextScene = Scene;
+                    nextScene = scenes[index + 1];
+                }
+                else
+                {
+                    index += 1;
                 }
             }
 
