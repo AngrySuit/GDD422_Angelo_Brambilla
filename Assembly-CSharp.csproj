@@ -64,8 +64,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scrips\EnemyMove.cs" />
     <Compile Include="Assets\Scrips\PelletDie.cs" />
     <Compile Include="Assets\Scrips\PlayerMove.cs" />
+    <Compile Include="Assets\Scrips\VEnemyMove.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

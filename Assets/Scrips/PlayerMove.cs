@@ -33,10 +33,12 @@ public class PlayerMove : MonoBehaviour
 
     private void Timer()
     {
+        // Ticks down the combo timer //
         if (Ctimer >= 1)
         {
             Ctimer -= 1 * Time.deltaTime;
         }
+        // When it runs out combo resets //
         else
         {
             combo = 0;
@@ -46,8 +48,10 @@ public class PlayerMove : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // Checks if the player colided with a peelet //
         if (collision.gameObject.layer == 8)
         {
+            // Increses combo Ctimer and score plus destroys the pellet colided //
             combo += 1;
             Ctimer += 5;
             Ctimer = Mathf.Clamp(Ctimer, 0, 10);
