@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -57,6 +58,11 @@ public class PlayerMove : MonoBehaviour
             Ctimer = Mathf.Clamp(Ctimer, 0, 10);
             score += 100 * combo;
             Destroy(collision.gameObject, 0.1f);
+        }
+        if (collision.gameObject.layer == 9)
+        {
+            string curentescene = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(curentescene);
         }
     }
 
