@@ -70,6 +70,6 @@ public class PlayerMove : MonoBehaviour
     {
         // Gets the player input and changes the velocity of the character to it//
         move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        rb.velocity = move * 5;
+        rb.velocity = move * 10;
     }
 }
