@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2365281255699453132}
   - component: {fileID: 2365281255699453131}
   - component: {fileID: 2365281255699453135}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,4 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2365281255699453132}
+  Pellet: {fileID: 6004085802113436998, guid: acd03a11e69ae494b81088a736fec5f8, type: 3}
   move: {x: 0, y: 0}
+  score: 0
+  combo: 0

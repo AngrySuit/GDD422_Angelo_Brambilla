@@ -13,11 +13,12 @@ public class PelletDie : MonoBehaviour
         
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    //checks for colision and destroys itself if it happens
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+       
     }
+
 
 
     // Update is called once per frame

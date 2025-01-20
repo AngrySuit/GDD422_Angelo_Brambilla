@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +7,14 @@ public class PlayerMove : MonoBehaviour
 {
 
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] GameObject Pellet;
+
 
     [SerializeField] Vector2 move;
+
+    [SerializeField] int score = 0;
+    [SerializeField] int combo = 0;
+    [SerializeField] float Ctimer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +27,34 @@ public class PlayerMove : MonoBehaviour
     {
 
         Move();
+        Timer();
+
+    }
+
+    private void Timer()
+    {
+        if (Ctimer >= 1)
+        {
+            Ctimer -= 1 * Time.deltaTime;
+        }
+        else
+        {
+            combo = 0;
+        }
     }
 
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            combo += 1;
+            Ctimer += 5;
+            Ctimer = Mathf.Clamp(Ctimer, 0, 10);
+            score += 100 * combo;
+            Destroy(collision.gameObject, 0.1f);
+        }
+    }
 
     void Move()
     {
